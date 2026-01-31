@@ -23,5 +23,8 @@ import java.util.Date;
 
 @Table(name = "workout")
 public class workout {
-    
+      @Id
+    @UuidGenerator
+    @Column(name = "id", unique = true, updatable = false)
+    private String workoutid;
 }
