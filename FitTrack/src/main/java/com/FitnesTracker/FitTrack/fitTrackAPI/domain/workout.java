@@ -2,6 +2,8 @@ package com.FitnesTracker.FitTrack.fitTrackAPI.domain;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,8 +25,15 @@ import java.util.Date;
 
 @Table(name = "workout")
 public class workout {
-      @Id
+    @Id
     @UuidGenerator
     @Column(name = "id", unique = true, updatable = false)
     private String workoutid;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private user owner;  // MANY workouts belong to ONE user
+
 }
