@@ -3,6 +3,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -14,6 +16,7 @@ import org.hibernate.annotations.UuidGenerator;
 import lombok.NonNull;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity//defines that this class is an entity
 @Getter//sets getters for fields
@@ -36,4 +39,21 @@ public class workout {
     @JoinColumn(name = "user_id")
     private user owner;  // MANY workouts belong to ONE user
 
+    private String title;
+    private String description;
+
+    private Date date;
+    private int duration; // duration in minutes
+
+    private Date createdAt;
+    private Date updatedAt;
+
+    @ManyToMany
+    @JoinTable(
+        name = "workout_exercises",  // Join table name
+        joinColumns = @JoinColumn(name = "workout_id"),
+        inverseJoinColumns = @JoinColumn(name = "exercise_id")
+    )
+    private List<exercise> exercises;  // ONE workout has MANY exercises
+    
 }

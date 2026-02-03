@@ -7,6 +7,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -38,7 +39,22 @@ public class exercise {
     @UuidGenerator
     @Column(name = "id", unique = true, updatable = false)
     private String id;
+
+    private String name;
     
-   
+    private String description;
+    
+    private String muscleGroup;
+    
+    private String equipment;
+    
+    private String difficultyLevel;
+    
+    private Date createdAt;
+
+    private Date updatedAt;
+
+     @ManyToMany(mappedBy = "exercises")
+    private List<workout> workouts;  // ONE exercise can be in MANY workouts
 
 }
