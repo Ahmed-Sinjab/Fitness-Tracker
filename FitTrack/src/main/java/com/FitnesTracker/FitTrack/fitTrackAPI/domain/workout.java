@@ -40,6 +40,8 @@ public class workout {
     private user owner;  // MANY workouts belong to ONE user
 
     private String title;
+    private String type;//e.g., cardio, strength training
+    
     private String description;
 
     private Date date;
