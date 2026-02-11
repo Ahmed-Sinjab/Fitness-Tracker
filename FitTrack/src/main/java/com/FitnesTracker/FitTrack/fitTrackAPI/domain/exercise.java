@@ -33,7 +33,7 @@ import java.util.List;
 
 @Table(name = "exercises")
 
-public class exercise {
+public class Exercise {
     
     @Id
     @UuidGenerator
