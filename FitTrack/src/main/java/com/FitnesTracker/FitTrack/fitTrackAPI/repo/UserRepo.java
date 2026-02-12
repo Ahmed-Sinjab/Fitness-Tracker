@@ -10,7 +10,7 @@ import com.FitnesTracker.FitTrack.fitTrackAPI.domain.workout;
 import java.util.Optional;
 
 @Repository
-public interface UserService extends JpaRepository<workout,String> {
+public interface UserRepo extends JpaRepository<workout,String> {
     Optional<workout> findById(String id);
 
 

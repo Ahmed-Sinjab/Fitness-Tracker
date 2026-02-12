@@ -32,7 +32,7 @@ import java.util.List;
 
 @Table(name = "users")
 
-public class user {
+public class User {
     
     @Id
     @UuidGenerator

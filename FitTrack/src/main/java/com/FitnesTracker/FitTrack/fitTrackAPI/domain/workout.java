@@ -37,7 +37,7 @@ public class workout {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private user owner;  // MANY workouts belong to ONE user
+    private User owner;  // MANY workouts belong to ONE user
 
     private String title;
     private String type;//e.g., cardio, strength training
