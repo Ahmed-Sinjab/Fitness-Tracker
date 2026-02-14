@@ -1,7 +1,7 @@
 package com.FitnesTracker.FitTrack.fitTrackAPI.service;
 
 import com.FitnesTracker.FitTrack.fitTrackAPI.domain.workout;
-import com.FitnesTracker.FitTrack.fitTrackAPI.domain.user;
+import com.FitnesTracker.FitTrack.fitTrackAPI.domain.User;
 
 
 import jakarta.transaction.Transactional;
