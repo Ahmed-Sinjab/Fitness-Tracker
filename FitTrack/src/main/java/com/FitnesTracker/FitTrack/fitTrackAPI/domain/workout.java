@@ -57,5 +57,6 @@ public class workout {
         inverseJoinColumns = @JoinColumn(name = "exercise_id")
     )
     private List<Exercise> exercises;  // ONE workout has MANY exercises
-    
+
+
 }
